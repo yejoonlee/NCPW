@@ -14,6 +14,7 @@ res = pinataPy.pin_file_to_ipfs(paths_to_file=paths_to_file)
 print(res)
 IpfsHash = res['IpfsHash']
 
+# 이미지 파일을 읽어오고 메타데이터 생성
 for file in paths_to_file:
     file_name = file[len(dir_path):]
 
@@ -43,12 +44,14 @@ for file in paths_to_file:
     os.system(command)
     # print(command)
 
+# ipfs에 파일을 fin
 dir_path = root_path + 'nft-metadata/'
 paths_to_file = glob(dir_path + '*.json')
 res = pinataPy.pin_file_to_ipfs(paths_to_file=paths_to_file)
 print(res)
 IpfsHash = res['IpfsHash']
 
+# 
 metadatas = []
 for file in paths_to_file:
     file_name = file[len(dir_path):]
